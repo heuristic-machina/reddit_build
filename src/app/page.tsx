@@ -20,12 +20,13 @@ export default async function Home() {
           Sign Out
         </Button>
       </form>
+
       {session?.user ? (
-        <div className='text-white'>{JSON.stringify(session.user)}</div>
+        <div className='text-green-600'>Signed In: {JSON.stringify(session.user)}</div>
       ) : (
         <div className='text-red-600'>Signed Out</div>
-        )}
-        <Profile />
+      )}
+        {/* <Profile /> */}
     </div>
   );
 }
