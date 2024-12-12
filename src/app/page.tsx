@@ -26,7 +26,7 @@ export default async function Home() {
       ) : (
         <div className='text-red-600'>Signed Out</div>
       )}
-        {/* <Profile /> */}
+        <Profile />
     </div>
   );
 }

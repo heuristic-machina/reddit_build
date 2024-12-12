@@ -7,7 +7,7 @@ export default function Profile() {
 
     // '?' denotes that session may be undefined
     if (session.data?.user) {
-        return <div className='text-green-400'>User signed in</div>;
+        return <div className='text-green-400'>User signed in: {JSON.stringify(session.data.user)}</div>;
     }
     //browser must be refreshed to show
     //todo: revalidate() form 
