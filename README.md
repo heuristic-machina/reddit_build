@@ -16,7 +16,7 @@ Oauth setup with githubProvider steps:
 Initial Design Steps after oauth setup:
 
 1. Separate app data and apply each to different route
-2. Make 'path helper' functions
+2. Make 'path helper' functions housed in single file.  The single file locations allows easier path(s) modifications across Link components or multiple files.
 3. Organize step 1 into routing folders and corresponding page.tsx
 4. Identify where data changes in application
 5. Create server action placeholders for each change in step 4
