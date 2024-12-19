@@ -6,14 +6,21 @@ import {
     NavbarContent,
     NavbarItem,
     Input,
-    // Button,
-    // Avatar
+    Button,
+    Avatar
 } from '@nextui-org/react';
 
 import { auth } from '@/auth';
 
 export default async function Header() {
     const session = await auth();
+
+    let authContent: React.ReactNode;
+    if (session?.user) {
+      authContent = <div>Avatar</div>
+  } else {
+    authContent = <div>Signin Signout</div>
+  }
 
     return (
         <Navbar className='shadow mb-6'>
@@ -24,13 +31,15 @@ export default async function Header() {
             </NavbarBrand>
             <NavbarContent justify='center'>
                 <NavbarItem>
-                    <Input />
+                    <Input
+                    placeholder='Search'
+                     />
                 </NavbarItem>
             </NavbarContent >
 
             <NavbarContent justify='end'>
                 <NavbarItem>
-                    {session?.user ? <div>Signed In</div> : <div>Signed Out</div>}
+                    {authContent}
                 </NavbarItem>
             </NavbarContent>
         </Navbar>

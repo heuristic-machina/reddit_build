@@ -11,7 +11,7 @@ export default async function Home() {
   return (
     <div>
       <form action={actions.signIn}>
-        <Button type='submit'>
+        <Button className='mb-2' type='submit'>
           Sign In
         </Button>
       </form>
