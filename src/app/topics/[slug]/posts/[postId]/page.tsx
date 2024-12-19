@@ -1,3 +1,3 @@
 export default function PostShowPage() {
-    return <div>Show all Posts Here</div>
+  return <div>Show all Posts Here</div>
 }
