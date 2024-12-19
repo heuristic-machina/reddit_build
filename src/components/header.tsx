@@ -17,7 +17,7 @@ export default async function Header() {
 
     let authContent: React.ReactNode;
     if (session?.user) {
-      authContent = <div>Avatar</div>
+      authContent = <div><Avatar src={'https://avatars.githubusercontent.com/u/158994288?v=4'} /></div>
   } else {
     authContent = <div>Signin Signout</div>
   }
