@@ -19,7 +19,22 @@ export default async function Header() {
     if (session?.user) {
       authContent = <div><Avatar src={session.user.image || ''} /></div>
   } else {
-    authContent = <div>Signin Signout</div>
+    authContent = <>
+        <NavbarItem>
+            <Button  
+            type='submit' 
+            color='secondary' 
+            variant='bordered'>
+            Sign In
+            </Button>
+        </NavbarItem>
+            <Button 
+            type='submit' 
+            color='primary' 
+            variant='flat'>
+            Sign Up
+            </Button>
+    </>
   }
 
     return (
@@ -38,9 +53,7 @@ export default async function Header() {
             </NavbarContent >
 
             <NavbarContent justify='end'>
-                <NavbarItem>
                     {authContent}
-                </NavbarItem>
             </NavbarContent>
         </Navbar>
     )
