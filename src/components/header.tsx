@@ -7,7 +7,10 @@ import {
     NavbarItem,
     Input,
     Button,
-    Avatar
+    Avatar,
+    Popover,
+    PopoverTrigger,
+    PopoverContent
 } from '@nextui-org/react';
 
 import { auth } from '@/auth';
@@ -18,7 +21,19 @@ export default async function Header() {
 
     let authContent: React.ReactNode;
     if (session?.user) {
-      authContent = <div><Avatar src={session.user.image || ''} /></div>
+      authContent = <Popover placement='left'>
+        <PopoverTrigger>
+            <Avatar src={session.user.image || ''} />
+        </PopoverTrigger>
+        <PopoverContent>
+            <div className='p-4'>
+                <form action={actions.signOut}>
+                    <Button type='submit'>Sign Out</Button>
+                </form>
+            </div>
+        </PopoverContent>
+        </Popover>
+      
   } else {
     authContent = <>
         <NavbarItem>
