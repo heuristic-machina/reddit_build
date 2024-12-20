@@ -35,3 +35,4 @@ After Auth conditioning find static & dynamic routes:
 Section D
 Build out homepage with topics and posts:
 1. Set layout of components
+2. NextUI elements styling added
