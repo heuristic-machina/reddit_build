@@ -1,3 +1,4 @@
+Section A
 Oauth setup with githubProvider steps:
 
 1. github.com developer settings to open new oauth application
@@ -13,7 +14,7 @@ Oauth setup with githubProvider steps:
 10. Make server actions to handle signIn & signOut
 11. Make client component app/components/profile.tsx to handle client signIn & signOut
 
-
+Section B
 Initial Design Steps after oauth setup:
 
 1. Separate app data and apply each to different route
@@ -22,7 +23,7 @@ Initial Design Steps after oauth setup:
 4. Identify where data changes in application
 5. Create server action placeholders for each change in step 4
 
-
+Section C
 After Auth conditioning find static & dynamic routes:
 1. Stop running server
 2. npm run build
@@ -30,3 +31,7 @@ After Auth conditioning find static & dynamic routes:
 4. Creating a headerAuth component using useSession() hook won't directly access cookies.  
 5. useSession() hook makes a request using Nextjs automatic generated route to the backend to figure out auth status
 6. Static pages utilizing caching are more performant in production giving user pre-rendered result
+
+Section D
+Build out homepage with topics and posts:
+1. Set layout of components
