@@ -1,3 +1,4 @@
+import * as actions from '@/actions';
 import {
     Input,
     Button,
@@ -14,7 +15,7 @@ export default function TopicCreateForm() {
                 <Button color='primary'>Topic Create Form</Button>
             </PopoverTrigger>
             <PopoverContent>
-                <form>
+                <form action={actions.createTopic}>
                     <div className='flex flex-col gap-4 p-4 w-80'>
                         <h3 className='text-lg'>Create a Topic</h3>
                         <Input label='Topic' labelPlacement='outside' placeholder='Topic' />
