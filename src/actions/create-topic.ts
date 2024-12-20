@@ -15,7 +15,7 @@ export async function createTopic(formData: FormData) {
         description: formData.get('description')
     });
     if (!result.success) {
-        console.log(result.error);
+        console.log(result.error.flatten().fieldErrors);
     }
 }
 //revalidate homepage
