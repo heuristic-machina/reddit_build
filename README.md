@@ -38,4 +38,5 @@ Build out homepage layout then functionality:
 2. NextUI elements styling added
 3. Add field validation with zod to server actions
 4. Match the return type from the formState in the server action to the useFormState() hook argument in the client component.
-5. Add error handling as a prop to the client component
+5. Add error handling as a prop to the client component in the create topic popover content fields.
+6. Add authentication validation if user tries submitting to the form when not logged in or if there is a failure to save to the database for any reason.
