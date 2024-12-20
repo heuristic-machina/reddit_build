@@ -33,6 +33,9 @@ After Auth conditioning find static & dynamic routes:
 6. Static pages utilizing caching are more performant in production giving user pre-rendered result
 
 Section D
-Build out homepage with topics and posts:
+Build out homepage layout then functionality:
 1. Set layout of components
 2. NextUI elements styling added
+3. Add field validation with zod to server actions
+4. Match the return type from the formState in the server action to the useFormState() hook argument in the client component.
+5. Add error handling as a prop to the client component
