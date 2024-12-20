@@ -1,3 +1,3 @@
 export default function TopicShowPage() {
-  return <div>Topic Show</div>;
+  return <div className="text-white">Topic Show</div>;
 }

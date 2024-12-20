@@ -1,6 +1,11 @@
 'use server'
 import {z} from 'zod';
 import { auth } from '@/auth';
+import type { Topic } from '@prisma/client';
+import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
+import { db } from '@/db';
+import paths from '@/paths';
 
 const createTopicSchema = z.object({
     name: z
@@ -45,8 +50,39 @@ export async function createTopic(
         }
     }
 
+    //declare with let variable
+    let topic: Topic;
+    //must get Topic.id once the topic is saved to the database
+    try {
+        topic = await db.topic.create({
+            data: {
+                slug: result.data.name,
+                description: result.data.description
+            }
+        })
+
+    } catch (err:unknown) {
+        if (err instanceof Error) {
+            return {
+                errors: {
+                    _form: [err.message]
+                }
+            }
+        } else {
+            return {
+                errors: {
+                    _form: ['Something went wrong']
+                }
+            }
+        }
+    }
+    //redirect works by throwing an error so cannot be called in the catch block
+    //redirect to topicShow by accessing topic id from try block
+    //revalidate homepage
+    revalidatePath('/')
+    redirect(paths.topicShow(topic.slug))
+
     return {
         errors: {},
     };
 }
-//revalidate homepage
