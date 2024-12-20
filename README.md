@@ -24,5 +24,9 @@ Initial Design Steps after oauth setup:
 
 
 After Auth conditioning find static & dynamic routes:
-1. stop running server
+1. Stop running server
 2. npm run build
+3. The header component currently reads cookies by using auth making it dynamic (less performant)
+4. Creating a headerAuth component using useSession() hook won't directly access cookies.  
+5. useSession() hook makes a request using Nextjs automatic generated route to the backend to figure out auth status
+6. Static pages utilizing caching are more performant in production giving user pre-rendered result
