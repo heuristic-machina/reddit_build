@@ -1,9 +1,8 @@
 Section A
-Oauth setup with githubProvider steps:
+Oauth setup with githubProvider steps (work around for reactjs 18 & nextjs 14; may possibly do a reactjs 19 & nextjs 15 work around for breaking changes):
 
 1. github.com developer settings to open new oauth application
 2  Add AUTH_SECRET, GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET to .env
-2.  Add AUTH_SECRET, GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET to .env
 3. npm install @nextui-org/react@2.2.9 framer-motion@10.16.4 --legacy-peer-deps
 4. npm i --save-exact @auth/core@0.18.1 @auth/prisma-adapter@1.0.6 next-auth@5.0.0-beta.3 --legacy-peer-deps
 5. npm i @prisma/client@5.22.0 --legacy-peer-deps
@@ -27,7 +26,7 @@ Section C
 After Auth conditioning find static & dynamic routes:
 1. Stop running server
 2. npm run build
-3. The header component currently reads cookies by using auth making it dynamic (less performant)
+3. The header component currently reads cookies by using auth making it dynamic (less performant; longer loading times)
 4. Creating a headerAuth component using useSession() hook won't directly access cookies.  
 5. useSession() hook makes a request using Nextjs automatic generated route to the backend to figure out auth status
 6. Static pages utilizing caching are more performant in production giving user pre-rendered result
@@ -36,8 +35,8 @@ Section D
 Build out homepage layout then functionality:
 1. Set layout of components
 2. NextUI elements styling added
-3. Add field validation with zod to server actions
+3. Add field validation with zod to server actions ensuring correct types of data are used.
 4. Match the return type from the formState in the server action to the useFormState() hook argument in the client component.
 5. Add error handling as a prop to the client component in the create topic popover content fields.
 6. Add authentication validation if user tries submitting to the form when not logged in or if there is a failure to save to the database for any reason.
-7. Save topic to the database by use let variable to capture topic id in a try block.  Revalidate the home page.  Redirect to topicShow page using path helpers.
+7. Save topic to the database by using 'let' variable to capture topic id in a try block.  Revalidate the home page.  Redirect to topicShow page using path helpers.
