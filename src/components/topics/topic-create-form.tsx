@@ -19,7 +19,7 @@ export default function TopicCreateForm() {
     return (
         <Popover placement='left'>
             <PopoverTrigger>
-                <Button color='primary'>Topic Create Form</Button>
+                <Button className='text-white' color='primary'>Create Topic</Button>
             </PopoverTrigger>
             <PopoverContent>
                 <form action={action}>
