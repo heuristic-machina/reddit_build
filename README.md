@@ -40,3 +40,4 @@ Build out homepage layout then functionality:
 5. Add error handling as a prop to the client component in the create topic popover content fields.
 6. Add authentication validation if user tries submitting to the form when not logged in or if there is a failure to save to the database for any reason.
 7. Save topic to the database by using 'let' variable to capture topic id in a try block.  Revalidate the home page.  Redirect to topicShow page using path helpers.
+8. Loading spinner added using useFormStatus() hook in form-button.tsx

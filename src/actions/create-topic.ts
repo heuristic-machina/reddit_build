@@ -29,6 +29,10 @@ export async function createTopic(
     formState: CreateTopicFormState, 
     formData: FormData
 ) : Promise<CreateTopicFormState> {
+
+    //pause code for 2.5 seconds to test loading spinner
+    // await new Promise(resolve => setTimeout(resolve, 2500));
+
     const result = createTopicSchema.safeParse({
         name: formData.get('name'),
         description: formData.get('description')
