@@ -35,6 +35,17 @@ export async function createPost(
             errors: result.error.flatten().fieldErrors,
         };
     }
+
+    const session = await auth();
+    //if there is no session or the session user is undefined
+    if (!session || !session.user) {
+        return {
+            errors: {
+                _form: ['You must be signed in to do this.'],
+            }
+        }
+    }
+
     return {
         errors: {},
     };
