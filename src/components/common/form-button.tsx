@@ -12,7 +12,7 @@ export default function FormButton({children}: FormButtonProps) {
     //submitting form changes to true & when sign to show loading spinner to user
     const { pending } = useFormStatus();
 
-    return <Button type='submit' isLoading={pending} >
+    return <Button className='text-white font-extrabold' color='primary' type='submit' isLoading={pending} >
         {children}
     </Button>
 
