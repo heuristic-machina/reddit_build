@@ -17,7 +17,8 @@ export default function TopicShowPage({ params }: TopicShowPageProps) {
       </h1>
     </div>
     <div>
-      <PostCreateForm />
+      {/* pass destructured slug to PostCreateForm component */}
+      <PostCreateForm slug={slug} />
     </div>
   </div>
 }

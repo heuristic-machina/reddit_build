@@ -50,3 +50,4 @@ TopicShowPage and creating posts:
 3. Use TopicCreateForm() component as template to PostCreateForm() UI.
 4. Add field validation with zod to server actions ensuring correct types of data are used.
 5. Add authentication to enable submitting form
+6. Pass topic slug as prop to create post.  In creating the post the slug will pass to the form data.  Create post's server action is called with 3 separate arguments: slug (called with bind), formState (uses useFormState() hook), formData (server action tied to the form).
