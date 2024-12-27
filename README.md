@@ -41,3 +41,9 @@ Build out homepage layout then functionality:
 6. Add authentication validation if user tries submitting to the form when not logged in or if there is a failure to save to the database for any reason.
 7. Save topic to the database by using 'let' variable to capture topic id in a try block.  Revalidate the home page.  Redirect to topicShow page using path helpers.
 8. Loading spinner added using useFormStatus() hook in form-button.tsx
+9. Mapping function iterates using topic.id.  Chip component attribute {topic.slug} passes to  Link component then navigates to url 'paths.topic.show'.
+
+Section E
+TopicShowPage and creating posts:
+1. Have topic slug displayed in TopicShowPage()
+2. Create layout for adding posts.
