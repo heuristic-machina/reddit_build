@@ -47,4 +47,5 @@ Section E
 TopicShowPage and creating posts:
 1. Have topic slug displayed in TopicShowPage()
 2. Create layout for adding posts.
-3. Use TopicCreateForm() component as template to PostCreateForm()
+3. Use TopicCreateForm() component as template to PostCreateForm() UI.
+4. Add field validation with zod to server actions ensuring correct types of data are used.
