@@ -51,3 +51,10 @@ TopicShowPage and creating posts:
 4. Add field validation with zod to server actions ensuring correct types of data are used.
 5. Add authentication to enable submitting form
 6. Pass topic slug as prop to create post.  In creating the post the slug will pass to the form data.  Create post's server action is called with 3 separate arguments: slug (called with bind), formState (uses useFormState() hook), formData (server action tied to the form).
+
+Section F
+PostList component found in both TopicShowPage() and Home()
+1. Create query file in /db.  Define data types and fetching functions.
+2. In PostList component create interface with type Promise for the defined types in db in step 1.
+3. Store the promise in variable and map it using the topic slug relation.  The topic.slug contains the Post[] for specified user.  Render data.
+4. Import PostList component and pass topic slug property into the TopicShowPage().
