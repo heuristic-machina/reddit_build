@@ -58,3 +58,6 @@ PostList component found in both TopicShowPage() and Home()
 2. In PostList component create interface with type Promise for the defined types in db in step 1.
 3. Store the promise in variable and map it using the topic slug relation.  The topic.slug contains the Post[] for specified user.  Render data.
 4. Import PostList component and pass topic slug property into the TopicShowPage().
+
+Section G
+1. PostShow component passes postId property in PostShowPage (for post and topic relationship).
