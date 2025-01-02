@@ -22,7 +22,7 @@ export default async function PostShowPage({ params }: PostShowPageProps) {
       <Link className="underline decoration-solid text-white text-2xl" href={paths.topicShow(slug)}>
         {"< "}Back to {slug}
       </Link>
-      <Suspense fallback={<div className='text-white'>Loading...</div>}>
+      <Suspense fallback={<PostShowLoading />}>
         <PostShow postId={postId} />
       </Suspense>
       <CommentCreateForm postId={postId} startOpen />
