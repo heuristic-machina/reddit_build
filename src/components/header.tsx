@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import HeaderAuth from '@/components/header-auth'
 import SearchInput from './search-input'
+import { Suspense } from 'react';
 
 import {
     Navbar,
@@ -12,7 +13,6 @@ import {
 
 export default function Header() {
 
-    
     return (
         <Navbar className='shadow mb-6'>
             <NavbarBrand>
@@ -22,7 +22,9 @@ export default function Header() {
             </NavbarBrand>
             <NavbarContent justify='center'>
                 <NavbarItem>
-                    <SearchInput/>
+                    <Suspense >
+                        <SearchInput/>
+                    </Suspense>
                 </NavbarItem>
             </NavbarContent >
 

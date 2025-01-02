@@ -1,5 +1,6 @@
 // use searchParams prop to find relevant posts and show them to the screen
-
+import PostList from '@/components/posts/post-list';
+import { fetchPostsBySearchTerm } from '@/db/queries/posts';
 import { redirect } from 'next/navigation'
 
 interface SearchPageProps {
@@ -15,5 +16,7 @@ export default async function SearchPage({searchParams}: SearchPageProps) {
         redirect('/')
     }
 
-    return <div className='text-white'>{term}</div>
+    return <div>
+        <PostList fetchData={() => fetchPostsBySearchTerm(term)} />
+    </div>
 }
