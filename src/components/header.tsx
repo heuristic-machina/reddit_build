@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import HeaderAuth from '@/components/header-auth'
+import SearchInput from './search-input'
 
 import {
     Navbar,
     NavbarBrand,
     NavbarContent,
     NavbarItem,
-    Input,
 } from '@nextui-org/react';
 
 
@@ -22,9 +22,7 @@ export default function Header() {
             </NavbarBrand>
             <NavbarContent justify='center'>
                 <NavbarItem>
-                    <Input
-                    placeholder='Search'
-                    />
+                    <SearchInput/>
                 </NavbarItem>
             </NavbarContent >
 
